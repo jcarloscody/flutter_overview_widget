@@ -1,33 +1,22 @@
 import 'package:flutter/material.dart';
 
-import '../navegacao/pages/page1.dart';
+import '../../navegacao/pages/page1.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+enum PopupMenuPages { container }
+
+class Container222 extends StatelessWidget {
+  const Container222({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Teste"),
-        backgroundColor: Colors.black54,
-        actions: const [
-          IconButton(
-            onPressed: null,
-            icon: Icon(Icons.ac_unit_rounded),
-          )
+        title: const Text("CONTAINERRRR 222"),
+        actions: [
+          PopupMenuButton<PopupMenuPages>(
+            itemBuilder: (context) => <PopupMenuItem<PopupMenuPages>>[],
+          ),
         ],
-      ),
-      endDrawer: const Drawer(
-        backgroundColor: Colors.black38,
-        child: Center(
-          child: Text("k"),
-        ),
-      ),
-      drawer: Drawer(
-        width: 50,
-        backgroundColor: Colors.blue[500],
-        child: const Center(child: Text("R")),
       ),
       body: Column(
         children: [

@@ -1,33 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:overv/popup_menu_button/container/container_page.dart';
 
-import '../navegacao/pages/page1.dart';
+import '../../navegacao/pages/page1.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+enum PopupMenuPages { container }
+
+class HomePageblbl extends StatelessWidget {
+  const HomePageblbl({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Teste"),
-        backgroundColor: Colors.black54,
-        actions: const [
-          IconButton(
-            onPressed: null,
-            icon: Icon(Icons.ac_unit_rounded),
-          )
+        actions: [
+          PopupMenuButton<PopupMenuPages>(
+            onSelected: (value) {
+              switch (value) {
+                case PopupMenuPages.container:
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Container222(),
+                  ));
+                  break;
+                default:
+              }
+            },
+            itemBuilder: (context) => <PopupMenuItem<PopupMenuPages>>[
+              const PopupMenuItem<PopupMenuPages>(
+                child: Text('text 1'),
+                value: PopupMenuPages.container,
+              ),
+              const PopupMenuItem<PopupMenuPages>(
+                child: Text('text 2'),
+                value: PopupMenuPages.container,
+              ),
+            ],
+          ),
         ],
-      ),
-      endDrawer: const Drawer(
-        backgroundColor: Colors.black38,
-        child: Center(
-          child: Text("k"),
-        ),
-      ),
-      drawer: Drawer(
-        width: 50,
-        backgroundColor: Colors.blue[500],
-        child: const Center(child: Text("R")),
       ),
       body: Column(
         children: [
@@ -67,7 +76,7 @@ class HomePage extends StatelessWidget {
                     color: Colors.green,
                   ),
                 ),
-                borderRadius: BorderRadius.circular(100),
+                //borderRadius: BorderRadius.circular(100),
                 boxShadow: const [
                   BoxShadow(
                     color: Colors.black,
