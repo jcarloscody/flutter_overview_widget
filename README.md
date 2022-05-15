@@ -30,3 +30,10 @@
 >       - ambos:
 >           - popUntil
 >           - pop
+
+
+> - CUSTOMIZAÇÃO DE ROTAS - NAVEGAÇÃO
+> - serve apenas para rotas nomeadas
+> - customização
+> - Observer de Navegação
+

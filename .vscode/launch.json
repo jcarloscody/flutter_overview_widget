@@ -5,18 +5,41 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "flutter_overview_widget",
+            "name": "navegacao_customizada",
+            "cwd": "navegacao_customizada",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "flutter_overview_widget (profile mode)",
+            "name": "navegacao_customizada (profile mode)",
+            "cwd": "navegacao_customizada",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "flutter_overview_widget (release mode)",
+            "name": "navegacao_customizada (release mode)",
+            "cwd": "navegacao_customizada",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "overview",
+            "cwd": "overview",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "overview (profile mode)",
+            "cwd": "overview",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "overview (release mode)",
+            "cwd": "overview",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
