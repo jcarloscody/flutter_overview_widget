@@ -1,65 +1,65 @@
 # OVERVIEW OF WIDGETS
 
-> - [`MaterialApp:`]() normalmente este é o primeiro widget que colocamos na raiz, e este é responsável por criar toda a estrutura do projeto baseada no material design, podemos substituir por CurpetinoApp tbm.
->  - `title`
->  - debugShowCheckedModeBanner
->  - home: página principal
->  - theme:
+> - **[`MaterialApp:`]**() normalmente este é o primeiro widget que colocamos na raiz, e este é responsável por criar toda a estrutura do projeto baseada no material design, podemos substituir por CurpetinoApp tbm.
+>   - title
+>   - debugShowCheckedModeBanner
+>   - home: página principal
+>   - theme:
 
 
-> - Scaffold
+> - **`Scaffold`**
 >    - responsável pela estrutura da page
 
-> - Container: agrega vários outros containers, widget complexo em sua estrutura. quando queremos apenas alguns espaços é aconselhável usar o SizedBox
+> - **`Container:`** agrega vários outros containers, widget complexo em sua estrutura. quando queremos apenas alguns espaços é aconselhável usar o SizedBox
 
-> - Fonts
+> - **`Fonts`**
 >    - O Flutter só suporta o .ttf e .otf
 >    - package google_fonts
 
 
-> - NAVEGAÇÃO: A navegação no Flutter funciona sob o conceito de stack, pilha.
->   - Formas:
->       - páginas: *Navigator.of(context).push(MaterialPageRoute(builder: (_)=>PaginaFim()));*
+> - **`NAVEGAÇÃO:`** A navegação no Flutter funciona sob o conceito de stack, pilha.
+>   - **`Formas:`**
+>       - **páginas:** *Navigator.of(context).push(MaterialPageRoute(builder: (_)=>PaginaFim()));*
 >           - push
 >           - pushAndRemoveUntil
 >           - pushReplacement
->       - nomes: *Navigator.of(ctx).pushNamed('/rota');*
+>       - **nomes**: *Navigator.of(ctx).pushNamed('/rota');*
 >           - pushNamed
 >           - pushNamedAndRemoveUntil
 >           - pushReplacementNamed
->       - ambos:
+>       - **ambos**:
 >           - popUntil
 >           - pop
 
 
-> - CUSTOMIZAÇÃO DE ROTAS - NAVEGAÇÃO
+> - **`CUSTOMIZAÇÃO DE ROTAS - NAVEGAÇÃO`**
 >   - serve apenas para rotas nomeadas
 >   - customização
 >   - Observer de Navegação
 
-> - POPUPMENUBUTTON: são os pontinhos que ficam no appBar
+> - **`POPUPMENUBUTTON`**: são os pontinhos que ficam no appBar
 
-> - Rows Columns
+> - **Rows Columns**
 
 
->  MEDIAQUERY
+>  **`MEDIAQUERY`**
 > - é uma classe que nos ajuda a recuperar/trabalhar com tamanhos da tela.
 > - comando *MediaQuery.of(context)*
-> - O que captamos:
+> - **O que captamos:**
 >   - padding.top: capta a status bar
 >   - width
 >   - height
 >   - orientation
 >   - ...
-> - Tamanho da AppBar: use a constante - *kToolbarHeight*, para tamanho default
->    - caso queira pegar quando o tamanho for customizado, separe em uma variável e pegue pelo preferredSize.height
-> - Divisão da tela: compreende o size.height do MediaQuery
+> - **Tamanho da AppBar:** use a constante - *kToolbarHeight*, para tamanho default
+>    - caso queira pegar quando o **tamanho for customizado**, separe em uma variável e pegue pelo `preferredSize.height`
+> - **Divisão da tela:** compreende o size.height do MediaQuery
 >   - statusBar
 >   - appBar
 >   - body
 
 
-> Package Device Preview
+> **`Package Device Preview`**
 > - servirá para testar em várias perspectiva de dispositivo.
 > - coloca-se na raiz.
 
@@ -73,12 +73,12 @@
 > ```
 
 
-> BOTÕES E ROTAÇÃO DE TEXTO
-> - Rotação
+> **`BOTÕES E ROTAÇÃO DE TEXTO`**
+> - **Rotação**
 > ``` sh 
 > RotateBox(quarterTuns: int, child: widget)
 > ```
-> > - Botão
+> > - **Botão**
 > ``` sh 
 > TextButton(onPressed: (){}, child: widget, style: TextButton.styleFrom());
 > 
@@ -97,4 +97,53 @@
 > InkWell(child: widget, onTap: (){})
 > 
 > GestureDetector(child:widget, onTap:(){}, onVerticalDragStart: (values){}, ...)
+> ```
+
+
+> **`SCROLL`** - rolagem
+> - **Single Child**
+> ``` sh 
+> SingleChildScrollView(child: widget)
+> 
+> ```
+> - **Vários** - **children**: usado muito quando temos valore dinâmicos. pelo construct builder é carregado apenas aqueles que é visto
+> ``` sh 
+> ListView(children: [widget])
+> 
+> ListView.builder(itemCount: length, itemBuilder: (ctx, index){})
+> 
+> ListView.separated(itemCount: length,separatorBuilder:(ctx,index){}, itemBuilder: (ctx, index){})
+> 
+> ```
+
+
+
+> **`DIALOGS:`** é importante colocar um await caso queira receber algum dado, faz mais sentido por exemplo no showTimePicker
+> - **Dialogs**
+> ``` sh 
+> 
+> ```
+> - **SimpleDialog**
+> ``` sh 
+>  showDialog(context: ctx, builder: (ctx){
+> return SimpleDialog()
+> })
+> ```
+>  - **AlertDialog**
+> ``` sh 
+>  showDialog(context: ctx, builder: (ctx){
+> return AlertDialog()
+> })
+> ```
+>   - **TimePicker**
+> ``` sh 
+>  showTimePicker (context: ctx, initialTime: TimeOfDay(),)
+> ```
+>   - **DatePicker**
+> ``` sh 
+>  showDatePicker (context: ctx, 
+>    initialDate: DateTime.now(), 
+>    firstDate:DateTime(2000),
+>    lastDate: DateTime(2025)
+> )
 > ```
