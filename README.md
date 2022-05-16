@@ -74,6 +74,27 @@
 
 
 > BOTÕES E ROTAÇÃO DE TEXTO
+> - Rotação
 > ``` sh 
 > RotateBox(quarterTuns: int, child: widget)
+> ```
+> > - Botão
+> ``` sh 
+> TextButton(onPressed: (){}, child: widget, style: TextButton.styleFrom());
+> 
+> ElevatedButton(onPressed: (){}, child: widget, style: ElevatedButton.styleFrom());
+> 
+> ElevatedButton(onPressed: (){}, child: widget, 
+> style: ButtonStyle(backgroundColor: MaterialStateProperty.resolveWith((state){
+>       if (state.contains(MaterialState.pressed))
+>            {return Cclors.black}
+> )})));
+> 
+> ElevatedButton.icon(onPressed: (){}, icon: widget, label: label);
+> 
+> IconButton(onPressed: (){}, icon: widget);
+> 
+> InkWell(child: widget, onTap: (){})
+> 
+> GestureDetector(child:widget, onTap:(){}, onVerticalDragStart: (values){}, ...)
 > ```
