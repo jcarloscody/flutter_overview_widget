@@ -147,3 +147,16 @@
 >    lastDate: DateTime(2025)
 > )
 > ```
+
+
+
+## Identificando a plataforma e mostrando o componente correto
+- *Platform.isIOS*
+
+
+# BuildContext
+> é uma `class utilitária` dentro do flutter e onde está **registrado** todos os widgets da nossa estrutura. então ele   da árvore para ser acessado caso tenha necessidade. e **servirá para** encontrar um elemento/informação de forma mais simples.
+> - **Por exemplo,** o MediaQuery.of usa o buildContext para capturar as informações da instância de MediaQuery que está mais próxima. bem como o Theme.of()
+> - o **buildContext anterior(pai)** `não conhece` nada do buildContext `posterior(son)` abaixo dele. apenas o **filho buildContext conhece o buildContext pai**, mão de via única.
+> - **em suma**, o contexto é uma árvore de componente que é registrado pelo contexto, **porém só é registrado dentro dele após o término da execução do método build**. `o mesmo ocorre no initState(), neste método o buildContext ainda não está construído`, por isto não poderás usar o contexto.
+> > - 
