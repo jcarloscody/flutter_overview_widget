@@ -159,4 +159,27 @@
 > - **Por exemplo,** o MediaQuery.of usa o buildContext para capturar as informações da instância de MediaQuery que está mais próxima. bem como o Theme.of()
 > - o **buildContext anterior(pai)** `não conhece` nada do buildContext `posterior(son)` abaixo dele. apenas o **filho buildContext conhece o buildContext pai**, mão de via única.
 > - **em suma**, o contexto é uma árvore de componente que é registrado pelo contexto, **porém só é registrado dentro dele após o término da execução do método build**. `o mesmo ocorre no initState(), neste método o buildContext ainda não está construído`, por isto não poderás usar o contexto.
-> > - 
+
+
+# Theme
+> Os temas são as customizações de cores , fontes, estilos da app.
+> - dentro do `MaterialApp`, por exemplo, colocamos as `definições default` para a aplicação como o todo. Com ele podemos tratar do estilo geral bem como especificamente.
+>   - definimos no parâmetro `theme` que recebe uma class *`ThemeData()`* com parâmetros
+>       - ***primaryColor***: cor princiapal da app como o todo
+>       - (...)
+> - ***`theme.of(context).copyWith():`*** esta forma é mais **aconselhável**, pois não quebra o contexto, ele vai pegar o **contexto do pai e vai gerar uma nova class** mudando apenas os atributos que passares.
+> - buscar thema da raiz: theme.of().
+> *`Definir theme local:`* vc tbm pode definir um theme local sem advir da raiz. você fazer um wrapper no widget com o Theme(data, child)
+> **`Buider(builder:(contextoInterno){}): `**
+
+
+
+# Snackbars
+
+
+# Formulário
+
+- inputs:
+  - TextField() : não contém validações. usarás o 'onChange:' para pegar o valor
+  - TextFormField() : contém validações. para formulário, mas poderás usar o anterior tbm quando o input for causa simples.
+  - é importante usa no modo

@@ -36,7 +36,7 @@ class Page3 extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pushReplacementNamed('/pagina4');
             },
-            child: Text("pagina 4 - via named - replacement"),
+            child: const Text("pagina 4 - via named - replacement"),
           ),
         ],
       )),

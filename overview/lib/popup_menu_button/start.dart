@@ -50,15 +50,21 @@ class HomePageblbl extends StatelessWidget {
             },
             child: const Text('page1'),
           ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed('/lendo_json');
+            },
+            child: const Text('PAGINA DE LEITURA JSON'),
+          ),
           Center(
             child: Container(
               width: 200,
               height: 200,
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.amber,
-                border: const Border(
+                border: Border(
                   bottom: BorderSide(
                     width: 5,
                     color: Colors.black45,
@@ -77,7 +83,7 @@ class HomePageblbl extends StatelessWidget {
                   ),
                 ),
                 //borderRadius: BorderRadius.circular(100),
-                boxShadow: const [
+                boxShadow: [
                   BoxShadow(
                     color: Colors.black,
                     offset: Offset(2, 2),

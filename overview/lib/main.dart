@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:overv/lendo_json/cidades_page.dart';
 import 'package:overv/popup_menu_button/container/container_page.dart';
 import 'package:overv/navegacao/pages/page1.dart';
 import 'package:overv/navegacao/params/page1params.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         '/pagina3': (context) => const Page3(),
         '/pagina4': (context) => const Page4(),
         '/pagina1params': (context) => const Page1Params(),
+        '/lendo_json': ((context) => const CidadesPage()),
       },
     );
   }
