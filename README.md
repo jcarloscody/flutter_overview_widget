@@ -183,3 +183,78 @@
   - TextField() : não contém validações. usarás o 'onChange:' para pegar o valor
   - TextFormField() : contém validações. para formulário, mas poderás usar o anterior tbm quando o input for causa simples.
   - é importante usa no modo
+
+
+# Lendo arquivo json do Assets
+
+
+# Stack
+> É um widget com finalidade de criar um posicionamento tipo pilha.
+> Para posicionar um widget da stack em alguma posição, a dica é usar o Align(child:widget), outra forma é usando o Positioned(top:x,right:x,child: widget,)
+``` sh 
+Stack(
+  children: []
+)
+```
+
+# BottomNavigatorBar & IndexedStack
+> - BottonNavigatorBar: é uma barra para parte inferior, normalmente usado pelos IOs, ele é um parâmetro do Scaffold "bottomNavigatorBar:". é ideal que seja num statefull, pois usará o setState para a mudança de indíce.
+ ```sh 
+BottomNavigationBar( 
+  onTap: (index){
+    setState(){}
+  },
+  items: [
+    BottomNavigatorBarItem(),
+    BottomNavigatorBarItem(),
+  ],
+  body: IndexedStack(
+    index: 0,//em qual indice começa o vetor
+    children:[
+      widget_pages
+    ]
+  )
+)
+ ```
+
+
+
+# CicleAvatar
+```sh
+CicleAvatar(
+  background...
+)
+```
+
+
+# Cores
+> - Class
+>   - Colors: possui várias cores .red, .blue, e pode definir alguma estrutura como aparencia opacidade com o Colors.red.withOpacity dentre outros.
+>   - Color.fromRGBO()
+>   - Color(hexadecimal)
+
+
+# Material Banner
+> - bem semelhante ao SnackBar, porém o que os destiguem é que o Material Banner irá aparecer na parte superior bem como tem como requisito colocar os actions . basicamente possui a mesma estrutura do SnackBar.
+
+```sh
+ElevatedButton(
+  onPressed:(){
+    final materialbanner = MaterialBanner(
+      content:...
+      background...
+      actions: [
+        TextButton(onPressed: (){
+          ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
+        }, child: widget),
+      ]
+    )
+    ScaffoldMessenger.of(context).showMaterialBanner(materialbanner);
+
+    //tbm pode fazer future para destruir o banner
+    Future.delayed(Duration(seconds:2), (){
+      ScaffoldMessenge.of(context).hideCurrentMaterialBanner();
+    })
+  }
+)
+```
